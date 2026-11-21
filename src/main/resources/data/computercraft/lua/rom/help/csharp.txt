@@ -1,0 +1,16 @@
+csharp compiles a C# program into Lua and runs it (CC: CSharp).
+
+ex:
+"edit hello.cs" then "csharp hello.cs" runs hello.cs (and saves hello.lua next to it).
+"csharp -c hello.cs" only writes hello.lua.
+
+A program is either top-level statements or a class with static void Main().
+Supported: classes (fields, properties, constructors, inheritance, virtual/override, static members),
+enums, int/double/bool/string, var, if/else, switch, while, do, for, foreach, break, continue,
+try/catch/finally, throw, lambdas, local functions, List<T>, Dictionary<K,V>, arrays,
+StringBuilder, Random, Math, Console, string methods, $"interpolation {x:F2}", LINQ-style
+list methods (Where, Select, OrderBy, Sum, Any, First...).
+
+CC: Tweaked APIs work in C# style: Peripheral.Find("monitor"), Redstone.SetOutput("back", true),
+Os.Sleep(1), Term.Clear(), Turtle.Forward(). Values from Lua are dynamic.
+Lua.Multi(Os.PullEvent()) gives all return values as a List.

@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+description = '''
+Write CC: Tweaked programs in C#. Run "csharp prog.cs" on any computer, turtle or pocket computer: the mod translates C# (classes, methods, lists, dictionaries, lambdas...) into Lua and runs it in the normal CC sandbox.
+'''
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "computercraft"
+type = "required"
+versionRange = "[1.110,)"
+ordering = "AFTER"
+side = "BOTH"
